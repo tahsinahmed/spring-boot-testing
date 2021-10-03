@@ -68,7 +68,7 @@ public class ControllerTest {
         given(testService.getOne(id)).willReturn(testEntity);
         mockMvc.perform(get("/api/test-one?id=" + id))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.age", is(testEntity.getHeight())));
+                .andExpect(jsonPath("$.age", is(testEntity.getAge())));
     }
 
     @Test
